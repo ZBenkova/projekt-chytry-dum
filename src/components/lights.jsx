@@ -6,7 +6,7 @@ export const Lights = ({ data }) => {
   return (
     <div className="lights">
       {data.map((light, index) => (
-        <Light data={light} key={index} />
+        <Light name={light.name} defaultState={light.state} key={index} />
       ))}
     </div>
   );

@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./lights.css";
+import "./images/light-off.svg";
 
-export const Light = ({ data }) => {
+export const Light = ({ name, defaultState }) => {
+  const [state, setState] = useState(defaultState);
+
+  const clickHandler = () => {
+    console.log("tut");
+  };
+
   return (
-    <div className="light">
+    <div className="light" onClick={clickHandler}>
       <div className="light__icon">
         <img src="./images/light-off.svg" />
       </div>
-      <div className="light__name">{data.name}</div>
+      <div className="light__name">{name}</div>
     </div>
   );
 };
